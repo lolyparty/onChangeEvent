@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <div style="margin:'20px'">
+        <select id="first_select">
+            <option>Slect an option</option>
+            <option id="blue" value=1>blue</option>
+            <option id="red" value=2>red</option>
+            <option id="green" value=3>green</option>
+        </select>
+    </div>
+    <div>
+        <select id="second_select">
+            <option>Select an option</option>
+            <option id="blue">blue</option>
+            <option id="red">red</option>
+            <option id="green">green</option>
+        </select>
+    </div>
+</body>
+<!-- <script src="index.js"> -->
+    <script>
+        // This logs the initial value you assigned to each option, on change event listens to change in selection, can be used for input, radio buttons, checkboxes, etc.
+        document.querySelector('#first_select').addEventListener('change',(e)=>{
+            if(e.target.value === '1'){
+                document.querySelector('h1').style.color = 'blue'
+                console.log(e.target.value)
+            } else if(e.target.value === '2'){
+                document.querySelector('h1').style.color = 'red'
+            } else if(e.target.value === '3') {
+                document.querySelector('h1').style.color = 'green'
+            }
+        })
+
+        //This logs the inner Html value of the selected option 
+        document.querySelector('#second_select').addEventListener('change',(e)=>{
+            document.querySelector('body').style.background = `${e.target.value}`
+            console.log(e.target.value)
+        })
+
+        // you can assign the value of the selected option to a variable, then do something if the value is equal to something.
+        // the first argument of the event listener is the event and the call back function is function called when selected option changes 
+
+
+    </script>
+</script>
+</html>
